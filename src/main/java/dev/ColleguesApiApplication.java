@@ -17,17 +17,10 @@ public class ColleguesApiApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(ColleguesApiApplication.class, args);
 
+
 		CollegueDataJpa collegueDataJpa = context.getBean(CollegueDataJpa.class);
 
-		Collegue collegue = new Collegue("30", "DUPONT", "Paul",
-				"dp@rty.com", LocalDate.now(), "http://site/img/dp");
-		collegueDataJpa.creer(collegue);
-		collegueDataJpa.creer(new Collegue("10", "MARTIN", "Jean",
-				"mj@rty.com", LocalDate.now(), "http://site/img/mj"));
-		collegueDataJpa.creer(new Collegue("22", "DUPRE", "Raoul",
-				"dr@rty.com", LocalDate.now(), "http://site/img/dr"));
-		collegueDataJpa.creer(new Collegue("18", "SAPIN", "Yves",
-				"sy@rty.com", LocalDate.now(), "http://site/img/sy"));
+
 		collegueDataJpa.Lister().forEach(System.out::println);
 
 
