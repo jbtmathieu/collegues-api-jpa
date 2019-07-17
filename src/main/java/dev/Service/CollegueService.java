@@ -29,27 +29,40 @@ public class CollegueService {
 	    	String ID;
 	    	ID = UUID.randomUUID().toString();
 	    	coll=new Collegue(UUID.randomUUID().toString(),"RAY","Jean","jean@greatcorp.com",
-	    			LocalDate.now(),"my/great/path.png");
+	    			LocalDate.now(),"http://my/great/path.png");
 	        data.put(ID, coll);
 	      
 	        coll=new Collegue("123","RAY","Jacques","jacques@greatcorp.com",
-	    			LocalDate.now(),"my/great/path.png");
+	    			LocalDate.now(),"http://my/great/path.png");
 	        data.put("123", coll);
 	        
 	        ID = UUID.randomUUID().toString();
 	        coll=new Collegue(ID,"SMITH","Pierre","pierre@greatcorp.com",
-	    			LocalDate.now(),"my/great/path.png");
+	    			LocalDate.now(),"http://my/great/path.png");
 	        data.put(ID, coll);
 	        
 	        ID = UUID.randomUUID().toString();
 	        coll=new Collegue(ID,"RAY","John","john@greatcorp.com",
-	    			LocalDate.now(),"my/great/path.png");
+	    			LocalDate.now(),"http://my/great/path.png");
 	        data.put(ID, coll);
 	        
 	        ID = UUID.randomUUID().toString();
 	        coll=new Collegue(ID,"MARTIN","William","will@greatcorp.com",
-	    			LocalDate.now(),"my/great/path.png");
+	    			LocalDate.now(),"http://my/great/path.png");
 	        data.put(ID, coll);
+	        
+	        data.put(UUID.randomUUID().toString(), new Collegue(ID,"MARTIN","Yves","my@greatcorp.com",
+                    LocalDate.now(),"http://my/great/my.png"));
+	        data.put(UUID.randomUUID().toString(), new Collegue(ID,"MAHRT","John","mj@greatcorp.com",
+                    LocalDate.now(),"http://my/great/mj.png"));
+	        data.put(UUID.randomUUID().toString(), new Collegue(ID,"MARTTY","Jack","mj@greatcorp.com",
+                    LocalDate.now(),"http://my/great/mj.png"));
+	        data.put(UUID.randomUUID().toString(), new Collegue(ID,"MARTIN","Pierre","mp@greatcorp.com",
+                    LocalDate.now(),"http://my/great/mp.png"));
+            data.put(UUID.randomUUID().toString(), new Collegue(ID,"MARSOUIN","John","mj@greatcorp.com",
+                    LocalDate.now(),"http://my/greatmj.png"));
+            data.put(UUID.randomUUID().toString(), new Collegue(ID,"MARIN","Gilles","mg@greatcorp.com",
+                    LocalDate.now(),"http://my/great/mg.png"));
 
 	    }
 	    

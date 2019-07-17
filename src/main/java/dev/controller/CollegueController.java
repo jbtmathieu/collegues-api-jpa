@@ -50,5 +50,19 @@ public class CollegueController {
         return collService.ajouterUnCollegue(collegue);
 
     }
+	
+	@RequestMapping(
+            method=RequestMethod.GET,
+            params= "namefull")
+    public List<Collegue> RecupCollegueRequete(@RequestParam String namefull) {
+        List<Collegue> collegues=collService.rechercherParNom(namefull);
+        List<Collegue>  response= new ArrayList<Collegue>();
+        for (int i=0; i < collegues.size();i++) {
+            response.add(collegues.get(i));
+        }
+        
+        return response;
+
+    }
 
 }
