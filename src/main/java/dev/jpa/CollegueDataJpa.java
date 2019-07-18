@@ -29,7 +29,7 @@ public class CollegueDataJpa {
         collegueRepository.save(coll);
     }
 
-    public Optional<Collegue> RechercherByNom(String name){
+    public List<Collegue> RechercherByNom(String name){
 
         return collegueRepository.findByNom(name);
     }

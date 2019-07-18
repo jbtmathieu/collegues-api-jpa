@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dev.entity.Collegue;
+import dev.exception.CollegueInvalidException;
+import dev.exception.CollegueNontrouveException;
 import dev.Service.CollegueService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,11 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/collegues")
 public class CollegueController {
+    @Autowired
 	CollegueService collService;
 	
 	public CollegueController() {
 		super();
-		collService=new CollegueService();
+		
 	}
 
 	@RequestMapping(
@@ -66,5 +73,20 @@ public class CollegueController {
         return response;
 
     }
+	
 
-}
+	    @RequestMapping(method = RequestMethod.PATCH, path = "/{matricule}")
+	    public Collegue modifierCollegue(@PathVariable String matricule, @RequestBody Collegue collegue) {
+
+	        if (collegue.getEmail() != null && !collegue.getEmail().isEmpty())
+	            return collService.modifierEmail(matricule, collegue.getEmail());
+
+	        if (collegue.getPhotoUrl() != null && !collegue.getPhotoUrl().isEmpty())
+	            return collService.modifierPhotoUrl(matricule, collegue.getPhotoUrl());
+
+	        return null;
+	    }
+    }
+
+
+
