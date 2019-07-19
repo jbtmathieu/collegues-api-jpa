@@ -59,7 +59,7 @@ import java.util.UUID;
             
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Yves", "my@greatcorp.com",
-                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "http://my/great/my.png"));
+                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "https://publicdomainvectors.org/tn_img/Rabbit_001_Face_Cartoon.png"));
 
             ID = UUID.randomUUID().toString();
 
