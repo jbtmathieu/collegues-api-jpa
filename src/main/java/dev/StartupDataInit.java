@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.time.LocalDate;
 import java.util.UUID;
-@CrossOrigin
+    @CrossOrigin
     @Component
     public class StartupDataInit {
 
@@ -60,7 +60,7 @@ import java.util.UUID;
             
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Yves", "my@greatcorp.com",
-                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "https://www.shutterstock.com/fr/image-illustration/raccoon-isolated-on-white-background-watercolor-1184033932"));
+                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "https://publicdomainvectors.org/tn_img/Rabbit_001_Face_Cartoon.png"));
 
             ID = UUID.randomUUID().toString();
 
