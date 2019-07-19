@@ -55,11 +55,11 @@ import java.util.UUID;
 
             ID = UUID.randomUUID().toString();
             collegueRepository.save(new Collegue(ID, "MARTIN", "William", "will@greatcorp.com",
-                    LocalDate.now(), "https://publicdomainvectors.org/en/free-clipart/Dalmatian-dog-portrait-vector-graphics/11777.html"));
+                    LocalDate.now(), "https://www.shutterstock.com/fr/image-vector/happy-cartoon-puppy-sitting-portrait-cute-582282628"));
             
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Yves", "my@greatcorp.com",
-                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "https://publicdomainvectors.org/tn_img/Rabbit_001_Face_Cartoon.png"));
+                    LocalDate.now().plusYears(-30).plusMonths(-3).plusDays(2), "https://www.shutterstock.com/fr/image-illustration/raccoon-isolated-on-white-background-watercolor-1184033932"));
 
             ID = UUID.randomUUID().toString();
 
@@ -74,12 +74,12 @@ import java.util.UUID;
             ID = UUID.randomUUID().toString();
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Pierre", "mp@greatcorp.com",
-                    LocalDate.now().plusYears(-18).plusMonths(6).plusDays(-6), "https://publicdomainvectors.org/tn_img/bujung06.png"));
+                    LocalDate.now().plusYears(-18).plusMonths(6).plusDays(-6), "https://www.shutterstock.com/fr/image-vector/pembroke-welsh-corgi-lap-dog-breed-1139306972"));
 
             ID = UUID.randomUUID().toString();
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "John", "mj@greatcorp.com",
-                    LocalDate.now().plusYears(-23).plusMonths(-4).plusDays(8), "https://publicdomainvectors.org/en/free-clipart/Donkey-portrait/82211.html"));
+                    LocalDate.now().plusYears(-23).plusMonths(-4).plusDays(8), "https://www.shutterstock.com/fr/image-vector/cartoon-black-cat-drawing-simple-cute-1160993116"));
 
             ID = UUID.randomUUID().toString();
 
