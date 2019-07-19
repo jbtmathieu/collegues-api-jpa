@@ -1,7 +1,9 @@
 package dev.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dev.entity.Collegue;
 import dev.exception.CollegueInvalidException;
@@ -71,6 +73,21 @@ public class CollegueController {
         }
         
         return response;
+
+    }
+	
+	@RequestMapping(
+	        value = "/photos",
+            method=RequestMethod.GET
+            )
+    public Map<String, String> RecupPhotoMatricule() {
+        Map<String, String> mapMatriculePhoto= new HashMap<>();
+        List<Collegue> collegues=collService.rechercherParNom("RAY");
+        for (int i=0; i < collegues.size();i++) {
+            mapMatriculePhoto.put(collegues.get(i).getMatricule(), collegues.get(i).getPhotoUrl());
+        }
+        
+        return mapMatriculePhoto;
 
     }
 	

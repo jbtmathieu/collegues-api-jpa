@@ -29,7 +29,7 @@ import java.util.UUID;
             collegueRepository.save(new Collegue("30", "DUPONT", "Paul",
                     "dp@rty.com", LocalDate.now(), "http://site/img/dp"));
             collegueRepository.save(new Collegue("10", "MARTIN", "Jean",
-                    "mj@rty.com", LocalDate.now(), "http://site/img/mj"));
+                    "mj@rty.com", LocalDate.now(), "https://publicdomainvectors.org/en/free-clipart/Cute-cartoon-cat-portrait-vector-drawing/15546.html"));
             collegueRepository.save(new Collegue("22", "DUPRE", "Raoul",
                     "dr@rty.com", LocalDate.now(), "http://site/img/dr"));
             collegueRepository.save(new Collegue("18", "SAPIN", "Yves",
@@ -55,7 +55,7 @@ import java.util.UUID;
 
             ID = UUID.randomUUID().toString();
             collegueRepository.save(new Collegue(ID, "MARTIN", "William", "will@greatcorp.com",
-                    LocalDate.now(), "http://my/great/path.png"));
+                    LocalDate.now(), "https://publicdomainvectors.org/en/free-clipart/Dalmatian-dog-portrait-vector-graphics/11777.html"));
             
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Yves", "my@greatcorp.com",
@@ -74,12 +74,12 @@ import java.util.UUID;
             ID = UUID.randomUUID().toString();
 
             collegueRepository.save(new Collegue(ID, "MARTIN", "Pierre", "mp@greatcorp.com",
-                    LocalDate.now().plusYears(-18).plusMonths(6).plusDays(-6), "http://my/great/mp.png"));
+                    LocalDate.now().plusYears(-18).plusMonths(6).plusDays(-6), "https://publicdomainvectors.org/tn_img/bujung06.png"));
 
             ID = UUID.randomUUID().toString();
 
-            collegueRepository.save(new Collegue(ID, "MARSOUIN", "John", "mj@greatcorp.com",
-                    LocalDate.now().plusYears(-23).plusMonths(-4).plusDays(8), "http://my/greatmj.png"));
+            collegueRepository.save(new Collegue(ID, "MARTIN", "John", "mj@greatcorp.com",
+                    LocalDate.now().plusYears(-23).plusMonths(-4).plusDays(8), "https://publicdomainvectors.org/en/free-clipart/Donkey-portrait/82211.html"));
 
             ID = UUID.randomUUID().toString();
 
