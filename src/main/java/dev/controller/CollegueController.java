@@ -82,7 +82,7 @@ public class CollegueController {
             )
     public Map<String, String> RecupPhotoMatricule() {
         Map<String, String> mapMatriculePhoto= new HashMap<>();
-        List<Collegue> collegues=collService.rechercherParNom("RAY");
+        List<Collegue> collegues=collService.rechercherParNom("MARTIN");
         for (int i=0; i < collegues.size();i++) {
             mapMatriculePhoto.put(collegues.get(i).getMatricule(), collegues.get(i).getPhotoUrl());
         }
