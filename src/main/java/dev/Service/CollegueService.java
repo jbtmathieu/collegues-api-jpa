@@ -28,7 +28,7 @@ public class CollegueService {
         Collegue coll;
         String ID;
         ID = UUID.randomUUID().toString();
-        coll = new Collegue(UUID.randomUUID().toString(), "RAY", "Jean", "jean@greatcorp.com",
+        coll = new Collegue(ID, "RAY", "Jean", "jean@greatcorp.com",
                 LocalDate.now().plusYears(-15).plusMonths(-4).plusDays(8), "http://my/great/path.png");
         data.put(ID, coll);
 
