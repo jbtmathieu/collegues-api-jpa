@@ -95,6 +95,13 @@ public class CollegueService {
         return collegueRepository.findByMatricule(matriculeRecherche).orElseThrow(() -> new CollegueNontrouveException("Matricule non trouvé"));
 
     }
+    
+    public Collegue rechercherParEmail(String email) {
+        
+        
+        return collegueRepository.findByEmail(email).orElseThrow(() -> new CollegueNontrouveException("Matricule non trouvé"));
+
+    }
 
     public Collegue ajouterUnCollegue(Collegue collegueAAjouter) {
 

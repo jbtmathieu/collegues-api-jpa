@@ -110,7 +110,7 @@ import java.util.UUID;
 
             
             ID = UUID.randomUUID().toString();
-            collegueRepository.save(new Collegue(ID, "MAHRT", "John", "mj@greatcorp.com",
+            collegueRepository.save(new Collegue(ID, "MAHRT", "John", "jb@je.com",
                     LocalDate.now().plusYears(-20).plusMonths(5).plusDays(-3), "http://my/great/mj.png"));
             utilisateurRepository.save(new Utilisateur((collegueRepository.findByMatricule(ID).get().getEmail()),
             		passwordEncoder.encode(collegueRepository.findByMatricule(ID).get().getEmail()), Arrays.asList("ROLE_USER")));

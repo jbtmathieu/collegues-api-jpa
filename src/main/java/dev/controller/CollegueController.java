@@ -9,11 +9,14 @@ import dev.entity.Collegue;
 import dev.exception.CollegueInvalidException;
 import dev.exception.CollegueNontrouveException;
 import dev.Service.CollegueService;
+import dev.Service.UtilisateurRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,12 +24,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-@CrossOrigin //permet de communiquer inter server
+//permet de communiquer inter server
+@CrossOrigin(allowCredentials = "true")
 @RestController
 @RequestMapping("/collegues")
 public class CollegueController {
     @Autowired
 	CollegueService collService;
+    
+    @Autowired
+	UtilisateurRepository utilisateurRepository;
 	
 	public CollegueController() {
 		super();
@@ -63,18 +70,21 @@ public class CollegueController {
 
     }
 	
-	//@Secured("ROLE_ADMIN")
+	@Secured({"ROLE_ADMIN" , "ROLE_USER"})
 	@RequestMapping(
-            method=RequestMethod.GET,
-            params= "namefull")
-    public List<Collegue> RecupCollegueRequete(@RequestParam String namefull) {
-        List<Collegue> collegues=collService.rechercherParNom(namefull);
-        List<Collegue>  response= new ArrayList<Collegue>();
-        for (int i=0; i < collegues.size();i++) {
-            response.add(collegues.get(i));
-        }
-        
-        return response;
+			value = "/me",
+            method=RequestMethod.GET)
+    public Collegue RecupMesInformations() {
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username = null;
+		if (principal instanceof UserDetails) {
+				username = ((UserDetails)principal).getUsername();
+		} else {
+				username = principal.toString();
+		}
+		//System.out.println(username);
+		    return collService.rechercherParEmail(username);
 
     }
 	
@@ -104,6 +114,21 @@ public class CollegueController {
 	            return collService.modifierPhotoUrl(matricule, collegue.getPhotoUrl());
 
 	        return null;
+	    }
+	    
+	    @Secured("ROLE_ADMIN")
+		@RequestMapping(
+	            method=RequestMethod.GET,
+	            params= "namefull")
+	    public List<Collegue> RecupCollegueRequete(@RequestParam String namefull) {
+	        List<Collegue> collegues=collService.rechercherParNom(namefull);
+	        List<Collegue>  response= new ArrayList<Collegue>();
+	        for (int i=0; i < collegues.size();i++) {
+	            response.add(collegues.get(i));
+	        }
+	        
+	        return response;
+
 	    }
     }
 
